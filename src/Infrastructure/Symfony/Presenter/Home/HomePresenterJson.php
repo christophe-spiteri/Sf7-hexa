@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Infrastructure\Symfony\Presenter;
+namespace Infrastructure\Symfony\Presenter\Home;
 
 use Domain\UseCase\Home\Presenter\HomePresenterInterface;
 use Domain\UseCase\Home\Response\HomeResponseDto;

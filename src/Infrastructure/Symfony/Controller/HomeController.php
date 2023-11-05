@@ -3,10 +3,9 @@
 namespace Infrastructure\Symfony\Controller;
 
 use Domain\UseCase\Home\HomeUseCase;
-use Domain\UseCase\Home\Presenter\HomePresenterInterface;
 use Domain\UseCase\Home\Request\HomeRequestDto;
-use Infrastructure\Symfony\Presenter\HomePresenterHtml;
-use Infrastructure\Symfony\Presenter\HomePresenterJson;
+use Infrastructure\Symfony\Presenter\Home\HomePresenterHtml;
+use Infrastructure\Symfony\Presenter\Home\HomePresenterJson;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
