@@ -7,5 +7,11 @@
         {{ homeResponseDto.error }}
     {% else %}
         {{ homeResponseDto.message }} <i class="bi bi-check2-all"></i>
+        <div
+                hx-get="{{ path('app_homeHtmx') }}"
+                hx-trigger="load"
+        >
+            HTMX --
+        </div>
     {% endif %}
 {% endblock %}
