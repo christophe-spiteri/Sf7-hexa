@@ -15,6 +15,12 @@ Cloner le project
 composer install
 ```
 
+## Dépendances
+
+- WebPack Encore
+- Bootstrap
+- HTMX
+
 ## Authors
 
 - [@christophe spiteri](https://github.com/christophe-spiteri)
