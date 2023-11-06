@@ -5,13 +5,17 @@ namespace Domain\UseCase\Home;
 
 use Domain\UseCase\Home\Request\HomeRequestDto;
 use Domain\UseCase\Home\Response\HomeResponseDto;
+use Symfony\Component\Clock\ClockInterface;
 
 class HomeUseCase
 {
+    public function __construct(private ClockInterface $clock)
+    {
+    }
+
     public function execute(HomeRequestDto $homeRequestDto): HomeResponseDto
     {
-        $laDate = new \DateTimeImmutable();
-
+        $laDate = $this->clock->now();
         $response = new HomeResponseDto();
         try {
             $response->setMessage(sprintf($homeRequestDto->message, $laDate->format('d/m/Y H:i')));
