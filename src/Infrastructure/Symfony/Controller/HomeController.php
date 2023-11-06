@@ -11,6 +11,33 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/*
+                                                            ┌──────────────────────────┐
+                                            ┌───────────────► HomeRequestDto()         ├────────────────┐
+                                            │               └──────────────────────────┘                │
+                                            │                                                           │
+                                            │                                                           │
+                                 ┌──────────┴───────────┐                             ┌─────────────────▼────────────────┐
+┌─────────────┐                  │                      │                             │                                  │
+│   Client    ├──────────────────►  HomeController      │                             │                                  │
+│             │                  │    route HTML        │                             │                                  │
+│             │                  │                      │                             │                                  │
+│             │                  │                      │                             │        HomeUseCase               │
+│             │                  │                      │                             │                                  │
+│             │                  │                      │                             │                                  │
+└──────▲──────┘                  └──────┬──▲────────────┘                             │         + execute()              │
+       │                                │  │                                          │                                  │
+       │                                │  │                                          │                                  │
+       │                                │  │                                          │                                  │
+       │                                │  │          ┌───────────────────────────┐   │                                  │
+       │     ┌───────────────────────┐  │  └──────────┤ HomeResponseDto()         ◄───┤                                  │
+       └─────┤ HomePresenterInterface◄──┘             └───────────────────────────┘   │                                  │
+             |        html           |                                                │                                  │
+             └───────────────────────┘                                                └──────────────────────────────────┘
+ */
+
+
+
 class HomeController extends AbstractController
 {
     #[Route('/html', name: 'app_home')]
